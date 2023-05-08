@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fontsgoogleapiscom/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fontsgoogleapiscom/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fontsgoogleapiscom/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fontsgoogleapiscom/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Next Word Prediction</h1>
+
+      
+    <form action="{{ url_for('predict')}}"method="post">
+      	<h3>Try writing these:</h3>
+      <ul>
+  <li>I want to</li>
+  <li>I want there for comp</li>
+  <li>these were</li>
+  <li>how do young man</li>
+</ul>
+    	<input  id = "input-field" type="text" name="words" placeholder="{{ input_text }}" required="required" value="{{ input_text }}"  />
+      
+        
+
+ <button type="submit"  id = "sent" name="sentiment_analysis" value="1">Get Sentiment</button>
+
+ <br>
+ <br>
+ <br>
+   <h3>   {{prediction_text}} <h3>
+  
+<h3> LSTM suggested:   {% for word in prediction_text %}
+	
+
+    <button type="button" id="concatenate-btn-{{ word }}" value="{{word}}" onclick="document.getElementById('input-field').value += this.value ;">{{
+      word }}</button>
+	{% endfor %}     <h3>
+
+
+        <button type="submit" name="predict_word"  class="btn btn-primary btn-block btn-large" value="1">LSTM Predict</button>
+
+
+
+
+<h3>
+  <br>
+
+{% if result_sentiment %}
+<div class="new">
+   <h1 id ="sent-result">The text is {{ result_sentiment }}</h1>
+ {% else %}
+  {% endif %}
+
+  {% if sent_prob %}
+  <div class = "results">
+      <h3>Positive {{ sent_prob.positive }}</h3>
+      <h3>Neutral {{ sent_prob.neutral }}</h3>
+         <h3> Negative {{ sent_prob.negative }}<h3>
+    {% else %}
+      
+    {% endif %}
+        
+         </div>
+
+
+
+
+
+    </form>
+
+
+
+
+        
+    </form>
+
+
+
+
+
+
+
+   <br>
+ 
+   <br>
+
+    
+
+
+
+
+
+
+ </div>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>

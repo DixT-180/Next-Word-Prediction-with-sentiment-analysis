@@ -1,0 +1,75 @@
+/* Global styles */
+body {
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Pacifico', cursive;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Form styles */
+form {
+    margin: 50px auto;
+    width: 600px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 18px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button[type="button"] {
+    background-color: #fff;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 9px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 18px;
+
+}
+
+.results {
+    margin-top: 50px;
+}
+
+#sent{
+background-color: #d9534f;
+}
+
+#sent-result{
+    color: #292b2c;
+}
